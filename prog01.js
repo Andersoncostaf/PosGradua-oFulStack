@@ -8,8 +8,8 @@ function soma(a, b) {
 }
 
 let total = soma('4', 4);
-console.log(total);
+console.log(1, total);
 
 //soma(4, 4);
 
-//mensagem('Anderson Costa');
+mensagem('Anderson Costa');

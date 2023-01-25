@@ -8,9 +8,9 @@ frutas[2] = 'pera';
 console.log(frutas);
 frutas[3] = 'limão';
 console.log(frutas);
-
-/*/
 /*
+/*
+
 let frutas = ['laranja', 'maça', 'banana'];
 console.log(frutas);
 
@@ -27,7 +27,7 @@ console.log(frutas);
 
 frutas.sort();
 console.log(frutas);
-
+//*/
 //dsdsdsds
 
 

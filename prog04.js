@@ -1,5 +1,5 @@
 /*
-  function mensagem(nome) {
+function mensagem(nome) {
   return `Olá ${nome}!`;
 }
 function soma() {
@@ -7,8 +7,8 @@ function soma() {
 }
 
 console.log(soma(1, 3, 4, 5));
-
 */
+
 
 /*----------------------------------------------------------------*/
 /*
@@ -19,9 +19,10 @@ function soma(a, b) {
 
 let nome = "Anderson";
 function mensagem(nome) {
-  console.log(`Olá` + nome);
+  console.log(`Olá ` + nome);
 }
-mensagem(' Costa');
+mensagem(nome + ' Costa');
+//mensagem(' Costa');
 */
 
 /*----------------------------------------------------------------*/
@@ -35,9 +36,11 @@ function soma(a, b) {
 //}
 
 console.log(soma(3, 5));
-*/
+/*
 
 /*-----------------------CALCULADORA-----------------------------------------*/
+// fica a pergunta. como eu posso calcular todos os operadores de um só vez
+
 /*
 let soma = function(a, b) {
   return a + b;
@@ -59,22 +62,23 @@ function executa(fn, a, b) {
   return fn(a, b);
 }
 
-let resultado = executa(divide, 15, 3);
+let resultado = executa(multiplica, 15, 3);
 console.log(resultado);
-*/
+//*/
 
 /*-----------------------fatorial -----------------------------------------*/
-/*
+
 function fatorial(n) {
   if (n <= 1)
     return 1;
   return n * fatorial(n - 1);
 }
 
-console.log(fatorial(6));*/
+console.log(fatorial(6));
+
 
 /*----------------------- -----------------------------------------*/
-
+/*
 let f = function fatorial(n) {
   if (n <= 1) return 1;
   return n * fatorial(n - 1);
@@ -83,4 +87,4 @@ let f = function fatorial(n) {
 let g = f;
 f = null;
 
-console.log(g(6));
+console.log(g(6));*/

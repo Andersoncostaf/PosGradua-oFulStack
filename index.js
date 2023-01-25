@@ -4,22 +4,19 @@
 }
 
 mensagem('Anderson');*/
-
+/*
 let resultado;
 
 function soma(a, b) {
   resultado = a + b;
   return resultado;
 }
-
-
-
 console.log(soma(2, 3));
-console.log(resultado);
-
+//console.log(resultado);
+*/
 /*----------------------------------------------------------------*/
-/*
-let resultado = 4;
+
+let resultado = 4 + 4;
 
 function soma(a, b) {
   let resultado = a + b;
@@ -30,7 +27,6 @@ console.log(1, resultado);
 console.log(2, soma(2, 3));
 console.log(3, resultado);
 
-*/
 
 /*----------------------------------------------------------------*/
 
