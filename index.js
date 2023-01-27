@@ -103,4 +103,6 @@ function Usuário(n, i) {
 }
 
 let usuário = new Usuário('João', 35);
+
+console.log(usuário);
 console.log(usuário.maiorIdade());
