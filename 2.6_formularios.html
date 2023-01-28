@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2.5 Formulários</title>
+    <script>
+    onload = () => {
+            nome.onkeydown = (e) => console.log(e.code);
+
+//fazendo para nome
+            nome.onblur = () => {
+                if (nome.value == '') {
+                    nome_erro.innerHTML = '!';
+                    nome.style.backgroundColor = '#F88';
+                } else {
+                    nome_erro.innerHTML = '';
+                    nome.style.backgroundColor = '#FF';
+                }
+                if(nome.value!='' || senha.value!= '') {
+                    btnsubmit.disabled = false;
+                else 
+                    btnsubmit.disabled = true;    
+                }
+            };   
+ //fazendo agora para senha
+            senha.onblur = () => {
+                if (senha.value == ''){
+                    senha_erro.innerHTML = '!';
+                    senha.style.backgroundColor = '#F88';
+                } else {
+                    senha_erro.innerHTML = '';
+                    senha.style.backgroundColor = '#FF';
+                }
+            };
+ 
+ //fazendo parar login
+               login.onsubmit = () => {
+                if (nome.value == '' || senha.value == '') {
+                alert('Os campos nomes e senha são obrigatórios');
+                } else {
+                    mensagem.innerHTML = `Você está logado como ${nome.value}`;
+                    login.style.display = 'none';
+                }
+                return false;
+            
+            };
+    };
+    </script>
+</head>
+<body>
+    <h1>JavaScript</h1>
+        <form id:="login" action="login.html">
+            <p>
+                <label for="nome">Nome: </label>
+                <input type="text" id="nome" name="nome" />
+                <span id="nome_erro"></span>
+            </p>
+            <p>
+                <label for="senha">Senha: </label>
+                <input type="password" id="senha" name="senha" />
+            </p>
+            <p>
+                <label for="senha">Idade: </label>
+                <input type="range" id="idade" name="idade" min="18" max="60" />
+            </p>
+            <p>
+                <button type="submit">Enviar </button>
+            </p>    
+        </form>
+        <p id="mensagem">Você ainda não está logado!</p>
+</body>
+</html>
