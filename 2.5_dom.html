@@ -1,0 +1,25 @@
+<!– D ocument O bject M odel da página
+--> Uma propriedade é um valor que você pode obter ou definir (como alterar o conteúdo de um elemento HTML).
+--> Um método é uma ação que você pode fazer (como adicionar ou excluir um elemento HTML). –> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2.3 Dom - 28/01 </title>
+    <script>
+        window.onload = ()  => {
+            let img= document.getElementById('f1');
+            alert(img.getAttributeNames());
+            //img.getAttribute('href') = 'foto2.gif';
+        };
+    </script>
+</head>
+<body>
+    <p id="p1">
+        <img id="f1" href="foto.gif" width="150" />
+    </p>
+    <p>PUC Minas</p>
+</body>
+</html>
