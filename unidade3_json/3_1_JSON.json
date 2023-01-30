@@ -1,0 +1,31 @@
+/*Json é um padrão que comunica a informação do computador
+do usuário, atravez de uma requisição ao servidor online em que tem 
+como objetivo retornar uma respota. 
+
+O Json é baseado em Java Script*/
+
+// exemplo de um objeto json
+
+{
+  "nome": "João",
+  "idade": "34",
+  "filhos": [
+    {
+      "nome": "Ana",
+      "idade": "20"
+    }, {
+      "nome": "Maria",
+      "idade": "22""
+    }
+  ]
+}
+
+// exemplo de transformação do objeto JSON em um String para 
+// ser enviada pela rede ou para armazenado localmente
+
+let usuario = {"nome": "João", "idade": "34", "filhos": [{"nome": "Ana", "idade": "20"}, {"nome": "Maria", "idade": "22"}]};}
+let str_usuario = JSON.stringify(usuario);
+
+/* agora ao receber, de um resposta HTTP ou pelo armazenamento local, um objeto que está na forma de um string, podemos reconstruí-lo da seguinte forma: */
+
+let usuario = JSON.parse(str_usario);
