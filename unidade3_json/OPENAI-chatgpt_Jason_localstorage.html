@@ -1,0 +1,26 @@
+// vai um exemplo de código web storage com json utilizando Java Script
+
+// ele me retornou isso:
+
+// GUARDAR DADOS:
+
+var employee = { // aqui convertemos o objeto employee em um string JSON
+  "name": "John Doe",
+  "age": 35,
+  "designation": "Manager",
+  "skills": ["leadership", "communication", "problem solving"]
+};
+localStorage.setItem("employee", JSON.stringify(employee));
+
+// RECUPERAR DADOS:
+
+var storedEmployee = JSON.parse(localStorage.getItem("employee"));
+console.log(storedEmployee.name);// Output: John Doe
+console.log(storedEmployee.age)/ // Output: 35
+console.log(storedEmployee.skills[0]); // Output: Leadership
+
+
+// aqui, convertemos o objeto 'employee' em uma string JSON usando //'JSON.stringify' e armazenamos essa string no LocalStorage usando //'localStorage.getItem' para recuperar a string JSON e, em seguida, a //convertemos de volta a um objeto JAVASCRIPT usando 'Json.parse'
+
+
+

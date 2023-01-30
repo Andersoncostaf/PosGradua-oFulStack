@@ -1,0 +1,62 @@
+
+<!– o Armazenamento local é uma forma de nós guardamos informações no navegador 
+Essas informações
+podem ser recuperadas mais tarde, quando ele retornar ao
+nosso site
+
+Tipos de informações que podem ser guardadas no
+navegador:
+• Dados de acesso, como o nome de usuário
+• Estado da aplicação, como a última página que ele visitou
+• Informações de configuração do site, que personalizam a
+sua experiência
+• Dados para funcionamento off-line
+
+API Web Storage
+
+A API (Application Programming Interface) Web Storage
+oferece uma implementação simples e potente para o
+armazenamento local.
+Essa API é implementada no navegador por meio de dois
+objetos pertencentes ao objeto window:
+• window.localStorage – Armazenamento permanente
+dos dados
+• window.sessionStorage – Armazenamento por uma
+sessão (mesma janela e mesma aba, inclusive durante
+recargas da página)
+Especificação: https://www.w3.org/TR/webstorage/
+
+
+–>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AULA 3.2 WEB STORAGE</title>
+  <script>
+    let usuario = {
+      nome: "João",
+      idade: 35,
+      filhos: [
+        {nome: 'Ana', iadde: 13},
+        {nome: 'Pedro', idade: 10},
+      ],
+      casado: true,
+    };
+
+    localStorage.seItem("usuario",JSON.stringify(usuario));
+
+    let strUsuario = localStorage.getItem('usuario');
+    console.log(strUsuario, typeof strUsuario);
+    let usuario2 = JSON.parse(strUsuario);
+    console.log(usuario2, typeof usuario2);
+  </script>
+  
+</head>
+<body>
+  
+</body>
+</html>

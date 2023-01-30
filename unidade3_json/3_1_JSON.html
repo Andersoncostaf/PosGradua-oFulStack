@@ -5,27 +5,47 @@ como objetivo retornar uma respota.
 O Json é baseado em Java Script*/
 
 // exemplo de um objeto json
-
-{
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3_1_JSON</title>
+  <script>
+    {
   "nome": "João",
   "idade": "34",
-  "filhos": [
+  "filhos": [ // filho é um vetor de objetos
     {
-      "nome": "Ana",
+      "nome": "Ana",// é um subobjeto
       "idade": "20"
     }, {
-      "nome": "Maria",
+      "nome": "Maria", // é um subobjeto
       "idade": "22""
     }
-  ]
-}
+  ],
+};
 
+    
 // exemplo de transformação do objeto JSON em um String para 
 // ser enviada pela rede ou para armazenado localmente
 
 let usuario = {"nome": "João", "idade": "34", "filhos": [{"nome": "Ana", "idade": "20"}, {"nome": "Maria", "idade": "22"}]};}
 let str_usuario = JSON.stringify(usuario);
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
+
+
+
+
+
 
 /* agora ao receber, de um resposta HTTP ou pelo armazenamento local, um objeto que está na forma de um string, podemos reconstruí-lo da seguinte forma: */
 
-let usuario = JSON.parse(str_usario);
+//let usuario = JSON.parse(str_usario);
+
