@@ -1,0 +1,64 @@
+/*
+Ajax é uma técnica de programação que permite a uma página da web enviar e receber dados de um servidor sem recarregar a página. isso é alcançado usando JS e a interface xmlhttpRequest do navegador. 
+
+Exemplo de como fazer uma requisção Ajax usando o JSON:
+
+var xhr = new XMLHttpRequest();
+xhr.open("GET", "https://exemplo.com/dados.json", true);
+xhr.onreadystatechange = function() {
+    if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+      var dados = JSON.parse(xhr.responseText);
+      console.log(dados);
+}
+};
+xhr.send();
+
+*/
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Codigo em Ajax 31/01</title>
+  <script>
+    function ajax(){
+      try {
+        let xhttp = new XMLHttpRequest();
+
+        xhttp.onreadystatechange = function(){
+          if(xhttp.readyState == 4){
+            if(xhttp.status ==200) {
+              let usuario = JSON.parse(xhttp.responseText);
+              
+              nome.innerHTML = usuario.nome;
+              idade.innerHTML = usuario.idade;
+              filhos.innerHTML = usuario.filhos.map((e) => e.nome).join(", ");
+            }
+            else{
+              console.warn('status: '+xhttp.status);
+            }
+          }
+        };
+
+        xhttp.open('GET', 'dados.json', true);
+        xhttp.send();
+      }catch(e) {
+        alert("Erro na comunicação com o servidor ");
+      }
+    }
+    
+  </script>
+</head>
+<body>
+  <h1>JavaScript</h1>
+  <button onclick="ajax()">Carrega usuario</button>
+  <dl>
+    <dt>Nome: </dt><dd id="nome"></dd>
+    <dt>Idade: </dt><dd id="idade"></dd>
+    <dt>Filhos: </dt><dd id="filhos"></dd>
+  </dl>
+  <p></p>
+</body>
+</html>
