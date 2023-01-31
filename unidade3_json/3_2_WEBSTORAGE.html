@@ -49,7 +49,10 @@ Especificação: https://www.w3.org/TR/webstorage/
 
     localStorage.seItem("usuario",JSON.stringify(usuario)); // função Strinigy para converter em uma string.
 
-    let strUsuario = localStorage.getItem('usuario');
+    let strUsuario = localStorage.getItem('usuario'); // getItem recupera um item de um objeto JSON Exemplo a baixo
+    // var json ={"nome": "João, "idade:
+    // var item = json.getItem("nome");
+    // console.log(item); // Exibe: "João"
     console.log(strUsuario, typeof strUsuario);
     let usuario2 = JSON.parse(strUsuario);
     console.log(usuario2, typeof usuario2);
