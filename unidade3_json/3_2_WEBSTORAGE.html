@@ -47,7 +47,7 @@ Especificação: https://www.w3.org/TR/webstorage/
       casado: true,
     };
 
-    localStorage.seItem("usuario",JSON.stringify(usuario));
+    localStorage.seItem("usuario",JSON.stringify(usuario)); // função Strinigy para converter em uma string.
 
     let strUsuario = localStorage.getItem('usuario');
     console.log(strUsuario, typeof strUsuario);
