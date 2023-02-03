@@ -1,0 +1,28 @@
+{
+    "method": "POST",
+    "url": "https://api.fbits.net/pedidos/4971/rastreamento/",
+    "headers": {
+        "Content-Type": "application/json",
+        "Authorization": "Basic zanot-609b5831-b4ce-44f5-b852-7563d7c36fab"
+    },
+    "body": { 
+        "situacaoPedidoId": 11,
+        "centroDistribuicaoId": "25",
+        "rastreamento": "",
+        "dataEvento": "2023-02-03T07:45:21-03:00",
+        "numeroNotaFiscal": "0733322",
+        "chaveAcessoNFE": "42230278256336000107550040007333221325540307",
+        "urlNFE": "http://www.nfe.fazenda.gov.br/portal/consultaRecaptcha.aspx?tipoConsulta=completa&tipoConteudo=XbSeqxE8pl8=",
+        "serieNFE": "4"
+    },
+    "json": true
+}
+
+ /*Este código JSON representa uma requisição HTTP a uma API. Aqui está uma explicação dos elementos incluídos:
+
+Método: A propriedade "method" especifica o método HTTP que será usado na requisição, neste caso o "POST".
+URL: A propriedade "url" especifica a URL da API para a qual a requisição será enviada, neste caso "https://api.fbits.net/pedidos/4971/rastreamento/".
+Cabeçalhos: A propriedade "headers" contém um objeto JSON que representa os cabeçalhos HTTP da requisição. Neste caso, há dois cabeçalhos: "Content-Type" e "Authorization".
+Corpo: A propriedade "body" contém um objeto JSON que representa o corpo da requisição. Este objeto inclui informações sobre a situação do pedido, o centro de distribuição, a informação de rastreamento, a data do evento, etc.
+JSON: A propriedade "json" especifica se o corpo da requisição deve ser enviado como JSON. Neste caso, o valor é "true".
+Esta requisição seria usada para enviar informações sobre o rastreamento de um pedido para a API. O código JSON representa as configurações da requisição e as informações incluídas na requisição. */

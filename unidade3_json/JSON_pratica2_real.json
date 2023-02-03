@@ -1,0 +1,22 @@
+{
+    "url": "http://json.zanotti.com.br:8280/dts/datasul-rest/resources/prg/zep/v1/Situacao",
+    "method": "PUT",
+    "headers": {
+        "Authorization": "Basic ZWNvLWludGVncmE6ZWNvLWludC16YTIwMjI="
+    },
+    "body": {
+        "Situacao": [
+            {
+                "Dat-integ": "2023-02-03",
+                "Num-Id": 877,
+                "Num-id-situacao": 0,
+                "Tabela": "Saldo-Estoq",
+                "Hra-integ": "",
+                "Desc-Erro": "Registro integrado com sucesso",
+                "Ind-situacao": 2,
+                "Qtd-Saldo": 17
+            }
+        ]
+    },
+    "json": true
+}
