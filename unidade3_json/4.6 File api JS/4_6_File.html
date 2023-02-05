@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APi File</title>
+    <script>
+        onload = () => {
+            arquivo.onchange = () =>{
+                let fr = new FileReader();
+                fr.readAsDataURL(arquivo.files[0]);
+                fr.onload = (e) => {
+                    output.innerHTML =
+                    `<img src="${e.target.result}" />`
+                };
+            };
+            btnArquivos.onclick = () => {
+                arquivo.click();
+            };
+        };
+   </script>
+</head>
+<body>
+    <h1>JavaScript</h1>
+    <p>
+    <input  id="arquivo"
+            type="file"
+            style="display: none"
+            accept="image/png" />
+    <button id="btnArquivos">Escolher arquivo</button>
+    </p>
+    <p id="output"></p>       
+</body>
+</html>
