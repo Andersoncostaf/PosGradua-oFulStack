@@ -45,10 +45,17 @@
                 e.preventDeafult();
                 z.classList.add('zona-over');
                 };
+
                 z.ondragleave = (e) => { 
                 e.preventDeafult();
                 z.classList.remove('zona-over');
                 };
+
+                z.ondrop = (e) => {
+                    e.preventDeafult();
+                    let arquivos = e.dataTransfer.files;
+                    console.log(Array.from(arquivos).map(f=>f.name).join('\n'));
+                }
             }
 
         };
@@ -65,3 +72,13 @@
     <div id="zona2" class="zona blue"></div>
 </body>
 </html>
+
+Sim, existem erros no código.
+
+Ocorre um erro de escrita no nome da propriedade "ondragstart" e "ondragend", que deve ser escrito como "ondragstart" e "ondragend".
+
+Na função "ondragover", a chamada ao "preventDeafult" está escrita incorretamente e deve ser escrita como "preventDefault". O mesmo erro ocorre na função "ondragleave".
+
+Na função "ondrop", a chamada ao "preventDeafult" está escrita incorretamente e deve ser escrita como "preventDefault".
+
+No elemento div com id "caixa", a propriedade "draggable" está escrita incorretamente e deve ser escrita como "draggable".
