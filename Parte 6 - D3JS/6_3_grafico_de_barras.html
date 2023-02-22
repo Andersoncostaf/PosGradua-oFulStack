@@ -17,8 +17,31 @@
   </style>
   <script src="https://d3js.org/d3.v6.min.js"></script>
   <script>
-    onload = {} => {};
+    onload = {} => {
+      let dados =[156, 273, 120, 115, 44, 260, 133];
+      let svg = d3.select('#grafico');
+      let largura = parseInt(svg.style('width'));
+      let altura = parseInt(svg.style('height'));
+      let fnX = d3.scaleLinear()
+      .domain([0, d3.max(dados))
+      .range([0, largura]);
+      let fnY = d3.scaleLinear()
+      .domain([0, dados.length])
+      .range([0, largura]);
+    let fnY = d3.scaleLinear()
+                .domain([0, dados.length].range[0, altura])
+       svg.selectAll('.barra')
+      .data(dados)
+      .enter()
+      .append('rect')
+      .attr('x', 0)
+      .attr('y', (d,i) =>fnY(i))
+      .attr('width', (d)=> fnX(d))
+      .attr('heigth', fnY(1)*0.9);
+    };
   </script>
+   
+   
 </head>
 <body>
   <h1>Grafico de Barras aula 6.3</h1>
