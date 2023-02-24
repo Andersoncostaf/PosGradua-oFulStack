@@ -1,50 +1,95 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <title>GRAFICO DE BARRAR</title>
-  <style>
-    #grafico {
-      border: thin solid #00000;
-      width: 600px;
-      height: 400px;
-    }
-    .barra {
-      fill: lightblue;
-      stroke: black;
-      
-    }
-  </style>
-  <script src="https://d3js.org/d3.v6.min.js"></script>
-  <script>
-    onload = {} => {
-      let dados =[156, 273, 120, 115, 44, 260, 133];
-      let svg = d3.select('#grafico');
-      let largura = parseInt(svg.style('width'));
-      let altura = parseInt(svg.style('height'));
-      let fnX = d3.scaleLinear()
-      .domain([0, d3.max(dados))
-      .range([0, largura]);
-      let fnY = d3.scaleLinear()
-      .domain([0, dados.length])
-      .range([0, largura]);
-    let fnY = d3.scaleLinear()
-                .domain([0, dados.length].range[0, altura])
-       svg.selectAll('.barra')
-      .data(dados)
-      .enter()
-      .append('rect')
-      .attr('x', 0)
-      .attr('y', (d,i) =>fnY(i))
-      .attr('width', (d)=> fnX(d))
-      .attr('heigth', fnY(1)*0.9);
-    };
-  </script>
-   
-   
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6.3 Grafico de Barras D3JS</title>
+    <style>
+        #grafico {
+            border: thin solid black;
+            width: 600px;
+            height: 250px;
+        }
+        .barra {
+            fill: lightblue;
+            stroke: black;
+        }
+        .rotulo {
+            text-anchor: end;
+        }
+    </style>
+
+
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script>
+        onload = () => {
+            let dados =[156, 27, 120, 115, 44, 260, 113 ];
+            let svg = d3.select('#grafico');
+            let largura = parseInt(svg.style('width'));
+            let altura = parseInt(svg.style('height'));
+            let fnX = d3
+            .scaleLinear()
+            .domain([0, d3.max(dados)])
+            .range([0, largura]);
+  
+            let fnY = d3
+            .scaleLinear()
+            .domain([0, dados.length])
+            .range([0, altura]);
+            
+            svg.selectAll('.barra')
+            .data(dados)
+            .enter()
+            .append('rect')
+            .classed('barra', true)
+            .attr('width', (d) => fnX(d ))
+            .attr('x', 0)
+            .attr('y', (d, i) => fnY(i))
+            .attr('height', (d,i) =>  fnY(1) * 0.9);
+            
+            svg.selectAll('.rotulo')
+            .data(dados)
+            .enter()
+            .append('text')
+            .classed('rotulo', true)
+            .text((d) => d)
+            .attr('x', (d) => fnX(d ))
+            .attr('dx', -5)
+            .attr('y', (d, i) => fnY(i))
+            .attr('dy', (d,i) =>  fnY(1) * 0.5 + (fnY(1) * 0.9)/2)
+            .style('text-anchor', 'end');
+        };
+    </script>
 </head>
 <body>
-  <h1>Grafico de Barras aula 6.3</h1>
-  <svg id="grafico"></svg>
+    <h1>Gráfico de Barras</h1>
+    <div>
+    <svg id="grafico"></svg>
+    </div>
+       
 </body>
 </html>
+
+/*Claro, vou explicar os detalhes do código HTML e JavaScript:
+
+A seção head contém as definições da página, como o título, metadados para acessibilidade e a referência ao arquivo CSS que define a aparência do gráfico.
+A seção body contém o conteúdo visível da página, incluindo um título e um div que contém o gráfico.
+O elemento svg é usado para criar gráficos vetoriais escaláveis.
+A seleção d3.select('#grafico') seleciona o elemento svg com o ID "grafico".
+As funções scaleLinear() da biblioteca D3 são usadas para definir as escalas dos eixos X e Y do gráfico. A escala X é baseada no maior valor nos dados, enquanto a escala Y é baseada no número de elementos nos dados.
+svg.selectAll('.barra') seleciona todos os elementos com a classe "barra" dentro do elemento svg.
+data(dados).enter().append('rect') faz o binding dos dados aos retângulos do gráfico.
+A função classed('barra', true) adiciona a classe "barra" a todos os retângulos do gráfico.
+attr('width', (d) => fnX(d )) define a largura de cada retângulo de acordo com a escala X e o valor do dado correspondente.
+attr('y', (d, i) => fnY(i)) define a posição vertical de cada retângulo de acordo com a escala Y e a posição do dado correspondente na matriz de dados.
+attr('height', (d,i) => fnY(1) * 0.9) define a altura de cada retângulo como uma porcentagem da altura total do gráfico.
+A seleção svg.selectAll('.rotulo') seleciona todos os elementos com a classe "rotulo" dentro do elemento svg.
+data(dados).enter().append('text') faz o binding dos dados aos rótulos do gráfico.
+A função classed('rotulo', true) adiciona a classe "rotulo" a todos os rótulos do gráfico.
+text((d) => d) define o texto de cada rótulo como o valor correspondente no conjunto de dados.
+attr('x', (d) => fnX(d )) define a posição horizontal de cada rótulo de acordo com a escala X e o valor do dado correspondente.
+attr('dx', -5) ajusta o deslocamento horizontal do rótulo para a esquerda.
+attr('y', (d, i) => fnY(i)) define a posição vertical de cada rótulo de acordo com a escala Y e a posição do dado correspondente na matriz de dados.
+attr('dy', (d,i) => fnY(1) * 0.5 + (fnY(1) * 0.9)/2) ajusta o deslocamento vertical do rótulo para o centro da barra correspondente.
+style('text-anchor', 'end') alinha o texto à direita da posição X do rótulo.*/
